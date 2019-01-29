@@ -2,9 +2,11 @@
 // Constants //
 //********* */
 const gameSpeed = 100;
-const canvasBackground = "black";
-const snakeColor = 'lightgreen';
-const snakeBorder = 'darkgreen';
+const canvasBackground = "rgb(118, 87, 81)";
+const snakeColor = "rgb(97, 136, 125)";
+const snakeBorder = "rgb(177, 195, 163)";
+const foodColor = "rgb(177, 195, 163)";
+const foodBorder = "rgb(243, 238, 186)";
 
 //******************************* */
 //Sets starting position of snake//
@@ -97,8 +99,8 @@ function endGame() {
 // Function to draw food on canvas//
 //****************************** */
 function drawFood() {
-    ctx.fillStyle = 'red';
-    ctx.strokeStyle = 'darkred';
+    ctx.fillStyle = foodColor;
+    ctx.strokeStyle = foodBorder;
     ctx.fillRect(foodX, foodY, 10, 10);
     ctx.strokeRect(foodX, foodY, 10, 10);
 }
@@ -115,7 +117,7 @@ function moveSnake() {
     const didEatFood = snake[0].x === foodX && snake[0].y == foodY;
     if (didEatFood) {
         score += 10;
-        document.getElementById("score").innerHTML = score;
+        document.getElementById("playerScore").innerHTML = score;
         //Create new food if snake eats food
         createFood();
     } else {
@@ -160,9 +162,9 @@ function drawSnake() {
 //************ */
 function drawSnakeBody(bodyPart) {
     //Sets color of body part
-    ctx.fillStyle = 'lightgreen';
+    ctx.fillStyle = snakeColor;
     //Sets border color of body part
-    ctx.strokeStyle = 'darkgreen';
+    ctx.strokeStyle = snakeBorder;
     //fills snake body with color
     ctx.fillRect(bodyPart.x, bodyPart.y, 10, 10);
     //draws border around snake body

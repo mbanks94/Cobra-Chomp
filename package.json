@@ -1,0 +1,14 @@
+{
+  "name": "nibbles",
+  "version": "1.0.0",
+  "description": "a snake-like game",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Banks",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

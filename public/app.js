@@ -12,14 +12,25 @@ let snake = [
     {x:270, y:300},
     {x:260, y:300}
 ];
+//
+// horizontal velocity
+let dx = 10;
+//
+// vertical velocity
+let dy = 0;
 //************************************************** */
 //Main game loop
+//createFood();
 main();
+// Call changeDirection when a key is pressed
+document.addEventListener("keydown", changeDirection)
 function main() {
     setTimeout(function onTick() {
         clearCanvas();
-        drawSnake();
+        //drawFood();
         moveSnake();
+        drawSnake();
+
         //call main again to create game loop
         main();
     }, 100);
@@ -67,7 +78,6 @@ function moveSnake() {
 }
 //*************************************************** */
 // Change snake direction when arrow key is pressed
-document.addEventListener("keydown", changeDirection)
 function changeDirection(event) {
     //Key codes for the arrow keys
     const leftKey = 37;
@@ -103,3 +113,30 @@ function changeDirection(event) {
         dy = 10;
     }
 }
+//***************************************************************** */
+// Helper function to produce random number
+function randomNum(min, max) {
+    return Math.round((Math.random() * (max-min) + min) / 10) * 10;
+}
+//
+// Creates food  with a random x & y coordinate
+// Also makes sure the food won't spawn where the snake is currently
+function createFood() {
+    foodX = randomNum(0, gameCanvas.width - 10);
+    foodY = randomNum(0, gameCanvas.height - 10);
+
+    snake.forEach(function isFoodOnSnake(bodyPart) {
+        const foodIsOnSnake = bodyPart.x == foodX && bodyPart.y == foodY;
+        if (foodIsOnSnake) {
+            createFood();
+        }
+    });
+}
+//
+// Function to draw food on canvas
+function drawFood() {
+    ctx.fillStyle = 'red';
+    ctx.strokeStyle = 'darkred';
+    ctx.fillRect(foodX, foodY, 10, 10);
+    ctx.strokeRect(foodX, foodY, 10, 10);
+} 

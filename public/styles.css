@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(243, 238, 186);
+}
+#gameCanvas {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 2%;
+}
+.welcome {
+    margin-left: 31%;
+    color: rgb(97, 136, 125);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+}
+#score {
+    color: rgb(97, 136, 125);
+    margin-top: 3%;
+    margin-left: 9%;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Press Start 2P', cursive;
+    display: inline-block;
+}
+#playerScore {
+    margin-top: 3%;
+}

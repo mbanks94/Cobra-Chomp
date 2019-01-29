@@ -1,6 +1,7 @@
 //*********** */
 // Constants //
 //********* */
+const gameSpeed = 100;
 const canvasBackground = "black";
 const snakeColor = 'lightgreen';
 const snakeBorder = 'darkgreen';
@@ -17,6 +18,10 @@ let snake = [
 ];
 // Payer score
 let score = 0;
+//Food x-coordinate
+let foodX;
+//Food y-coordinate
+let foodY;
 // horizontal velocity
 let dx = 10;
 // vertical velocity
@@ -53,7 +58,7 @@ function main() {
 
         //call main again to create game loop
         main();
-    }, 100);
+    }, gameSpeed);
 }
 
 //**************** */
@@ -180,7 +185,6 @@ function changeDirection(event) {
     const down = dy === 10;
     const right = dx === 10;
     const left = dx === -10;
-    
     //**************************************************** */
     // Changes the vertical and horizontal velocity       //
     // according to the key that was pressed.            //

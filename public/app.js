@@ -92,7 +92,6 @@ function main() {
 //********** */
 function resetScore() {
     highScores.push(score);
-    // console.log(highScores);
     score = 0;
     document.getElementById("playerScore").innerHTML = score;
 }

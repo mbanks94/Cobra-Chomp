@@ -17,14 +17,18 @@
         <div id="playerScore">0</div>
     </div>
 
-    <div class="nameInput">Player Name:
-        <br>
-        <div class="inputAndBtn">
-            <input class="input" type="text" name="name">
-            <button class="btn" type="submit">Submit</button>
-        </div>      
+    <div id="gameStart">
+        <div class="nameInput">Player Name:
+            <br>
+            <div class="inputAndBtn">
+                <form action="/high-scores" method="post">
+                    <input class="input" type="text" name="name">
+                    <button id="submit" class="btn" type="button">Start</button>
+                </form>
+            </div>      
+        </div>
     </div>
-    
+
     <div id="gameOver">
         <div class="gameOverMessage">Game Over</div>
         <button id="btn">Respawn</button>

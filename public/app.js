@@ -12,11 +12,11 @@ const foodBorder = "rgb(243, 238, 186)";
 //Sets starting position of snake//
 //***************************** */
 let snake = [
-    {x:300, y:300},
-    {x:290, y:300},
-    {x:280, y:300},
-    {x:270, y:300},
-    {x:260, y:300}
+    {x:200, y:200},
+    {x:190, y:200},
+    {x:180, y:200},
+    {x:170, y:200},
+    {x:160, y:200}
 ];
 // Payer score
 let score = 0;
@@ -28,29 +28,41 @@ let foodY;
 let dx = 10;
 // vertical velocity
 let dy = 0;
-
+// Game Over Pop up box
+let gameOver = document.getElementById('gameOver');
+gameOver.style.display = "none";
+// Reset Game Button
+let reset = document.getElementById('btn');
 //****************** */
 //Get canvas element//
 //**************** */
 var gameCanvas = document.getElementById('gameCanvas');
 //Sets the drawing object
 var ctx = gameCanvas.getContext('2d');
-
+//
+startGame();
+//
 //********** */
 //Start game//
 //******** */
-main();
-// Create first food location
-createFood();
+function startGame() {
+    main();
+    // Create first food location
+    createFood();
+}
 // Call changeDirection when a key is pressed
 document.addEventListener("keydown", changeDirection)
-
 //************** */
 //Main game loop//
 //************ */
 function main() {
 
-    if (endGame()) return;
+    gameOver.style.display = "none";
+
+    if (endGame()) {
+        gameOver.style.display = "block";
+        return;
+    }
 
     setTimeout(function onTick() {
         clearCanvas();
@@ -63,8 +75,28 @@ function main() {
     }, gameSpeed);
 }
 
+//************ */
+//Resets Score//
+//********** */
+function resetScore() {
+    document.getElementById("playerScore").innerHTML = 0;
+}
+
+//********************* */
+//Resets Snake position//
+//******************* */
+function resetSnake() {
+    snake = [
+        {x:200, y:200},
+        {x:190, y:200},
+        {x:180, y:200},
+        {x:170, y:200},
+        {x:160, y:200}
+    ];
+}
+
 //**************** */
-//Reset the canvas//
+//Draws the canvas//
 //************** */
 function clearCanvas() {
     //Select background color
@@ -78,13 +110,15 @@ function clearCanvas() {
 // itself or any of the walls            //
 //************************************* */ 
 function endGame() {
-    //i starts at 4 bc if it starts at 0, the game would end immediately
+    // i starts at 4 bc if it starts at 0, the game would end immediately
     // Also its impossible for the first three snake parts to touch each other
     for (let i = 4; i < snake.length; i++) {
         const didCollide = snake[i].x === snake[0].x &&
             snake[i].y === snake[0].y;
         
-        if (didCollide) return true
+        if (didCollide) {
+            return true
+        } 
     }
 
     const hitLeftWall = snake[0].x < 0;
@@ -95,6 +129,18 @@ function endGame() {
     return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall 
 }
 
+//****************** */
+//Restarts the Game //
+//**************** */
+reset.addEventListener("click", resetGame);
+function resetGame() {
+    gameOver.style.display = "none";
+
+    resetScore();
+    clearCanvas();
+    resetSnake();
+    startGame();
+}    
 //******************************** */
 // Function to draw food on canvas//
 //****************************** */

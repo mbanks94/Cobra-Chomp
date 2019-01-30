@@ -19,15 +19,26 @@ body {
 #score {
     position: absolute;
     color: rgb(97, 136, 125);
-    margin-top: 15%;
+    margin-top: 25%;
     margin-left: 12%;
     text-align: center;
     font-size: 40px;
     font-family: 'Press Start 2P', cursive;
     display: inline-block;
 }
-#playerScore {
+#playerScore,
+#newHighScore {
     margin-top: 3%;
+}
+#highScore {
+    position: absolute;
+    color: rgb(97, 136, 125);
+    margin-top: 15%;
+    margin-left: 7%;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Press Start 2P', cursive;
+    display: inline-block;
 }
 .inputAndBtn {
     font-family: 'Press Start 2P', cursive;

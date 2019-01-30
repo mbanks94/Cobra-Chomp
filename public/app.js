@@ -20,7 +20,7 @@ let snake = [
 ];
 // Payer score
 let score = 0;
-let highScores = [];
+let highScore = 0;
 //Food x-coordinate
 let foodX;
 //Food y-coordinate
@@ -91,7 +91,6 @@ function main() {
 //Resets Score//
 //********** */
 function resetScore() {
-    highScores.push(score);
     score = 0;
     document.getElementById("playerScore").innerHTML = score;
 }
@@ -180,11 +179,22 @@ function moveSnake() {
     if (didEatFood) {
         score += 10;
         document.getElementById("playerScore").innerHTML = score;
+        findHighScore(score);
         //Create new food if snake eats food
         createFood();
     } else {
         //Remove the last element of snake  
         snake.pop();
+    }
+}
+
+//************ */
+// High Score //
+//********** */
+function findHighScore(score) {
+    if (score > highScore) {
+        highScore = score;
+        document.getElementById('newHighScore').innerHTML = highScore;
     }
 }
 

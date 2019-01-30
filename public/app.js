@@ -32,7 +32,7 @@ let dy = 0;
 // Game Start Box
 let gameStart = document.getElementById('gameStart');
 // Game start / Name submit button
-let startBtn = document.getElementById('submit');
+let startBtn = document.getElementById('start');
 // Game Over Pop up box
 let gameOver = document.getElementById('gameOver');
 gameOver.style.display = "none";

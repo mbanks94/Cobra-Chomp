@@ -29,20 +29,22 @@ body {
 #playerScore {
     margin-top: 3%;
 }
-.nameInput {
-    position: absolute;
-    margin-top: 10%;
-    margin-right: 10%;
-    color: rgb(97, 136, 125);
+.inputAndBtn {
     font-family: 'Press Start 2P', cursive;
-    font-size: 30px; 
+    color: rgb(102, 76, 70);
+    
 }
 .input {
     font-family: 'Press Start 2P', cursive;
     color: rgb(102, 76, 70);
     padding: 2%;
+    margin-top: 5%;
+    margin-bottom: 4%;
 }
 .btn {
+    position: absolute;
+    top: 40%;
+    left: 42%;
     font-family: 'Press Start 2P', cursive;
     color: rgb(102, 76, 70);
     padding: 2%;
@@ -74,8 +76,15 @@ body {
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
 }
+#submit {
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(102, 76, 70);
+    padding: 2%;
+    margin-top: 2%;
+}
 #btn {
-    margin-top: 15%;
+    margin-top: 5%;
+    margin-bottom: 5%; 
     font-family: 'Press Start 2P', cursive;
     color: rgb(102, 76, 70);
     padding: 2%;

@@ -18,20 +18,21 @@
     </div>
 
     <div id="gameStart">
-        <div class="nameInput">Player Name:
-            <br>
-            <div class="inputAndBtn">
-                <form action="/high-scores" method="post">
-                    <input class="input" type="text" name="name">
-                    <button id="submit" class="btn" type="button">Start</button>
-                </form>
-            </div>      
-        </div>
+        <button id="start" class="btn" type="button">Start</button>
     </div>
 
     <div id="gameOver">
         <div class="gameOverMessage">Game Over</div>
         <button id="btn">Respawn</button>
+        <div class="inputAndBtn">
+            Player Name:
+            <form action="/scores" method="post">
+                <input class="input" type="text" name="name">
+                Your score:
+                <input class="input" type="number" name="score">
+                <button id="submit" type="submit">Submit Score</button>
+            </form>
+        </div>  
     </div>
 
     <canvas id="gameCanvas" width="400" height="400" style="border: 5px solid rgb(70, 83, 84)"></canvas>

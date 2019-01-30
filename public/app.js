@@ -29,6 +29,10 @@ let foodY;
 let dx = 10;
 // vertical velocity
 let dy = 0;
+// Game Start Box
+let gameStart = document.getElementById('gameStart');
+// Game start / Name submit button
+let startBtn = document.getElementById('submit');
 // Game Over Pop up box
 let gameOver = document.getElementById('gameOver');
 gameOver.style.display = "none";
@@ -40,19 +44,23 @@ let reset = document.getElementById('btn');
 var gameCanvas = document.getElementById('gameCanvas');
 //Sets the drawing object
 var ctx = gameCanvas.getContext('2d');
-//
-startGame();
-//
+
 //********** */
 //Start game//
 //******** */
+startBtn.addEventListener("click", startGame);
 function startGame() {
+    //Remove game start box
+    gameStart.style.display = "none";
+    //Starts game loop
     main();
     // Create first food location
     createFood();
 }
+
 // Call changeDirection when a key is pressed
 document.addEventListener("keydown", changeDirection)
+
 //************** */
 //Main game loop//
 //************ */

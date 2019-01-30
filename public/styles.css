@@ -31,14 +31,11 @@ body {
 }
 .nameInput {
     position: absolute;
-    margin-top: 23%;
-    margin-left: 9%;
+    margin-top: 10%;
+    margin-right: 10%;
     color: rgb(97, 136, 125);
     font-family: 'Press Start 2P', cursive;
     font-size: 30px; 
-}
-.inputAndBtn {
-    
 }
 .input {
     font-family: 'Press Start 2P', cursive;
@@ -49,6 +46,17 @@ body {
     font-family: 'Press Start 2P', cursive;
     color: rgb(102, 76, 70);
     padding: 2%;
+}
+#gameStart {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(97, 136, 125, 0.55);
+    padding: 50px;
+    width: 300px;
+    height: 200px;
+    text-align: center;
 }
 #gameOver {
     position: absolute;

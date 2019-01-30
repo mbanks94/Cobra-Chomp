@@ -20,8 +20,8 @@ app.post('/scores', (req, res) => {
     let name = req.body.name;
     let score = req.body.score;
     res.send('Name: ' + name + ' Score: ' + score);
-    let writeData = fs.writeFileSync(dataPath, 
-        JSON.stringify('Name: ' + name + ' Score: ' + score),
+    let writeData = fs.appendFileSync(dataPath, 
+        JSON.stringify('Name: ' + name + ' Score: ' + score + '; '),
         'utf-8', err => console.log(err));
 });
 

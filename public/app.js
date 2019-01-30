@@ -36,6 +36,8 @@ let startBtn = document.getElementById('start');
 // Game Over Pop up box
 let gameOver = document.getElementById('gameOver');
 gameOver.style.display = "none";
+//Score Submit
+let scoreInput = document.getElementById('scoreInput');
 // Reset Game Button
 let reset = document.getElementById('btn');
 //****************** */
@@ -70,6 +72,7 @@ function main() {
 
     if (endGame()) {
         gameOver.style.display = "block";
+        scoreInput.setAttribute("value", score);
         return;
     }
 

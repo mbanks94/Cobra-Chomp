@@ -29,6 +29,27 @@ body {
 #playerScore {
     margin-top: 3%;
 }
+.nameInput {
+    position: absolute;
+    margin-top: 23%;
+    margin-left: 9%;
+    color: rgb(97, 136, 125);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px; 
+}
+.inputAndBtn {
+    
+}
+.input {
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(102, 76, 70);
+    padding: 2%;
+}
+.btn {
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(102, 76, 70);
+    padding: 2%;
+}
 #gameOver {
     position: absolute;
     top: 43%;

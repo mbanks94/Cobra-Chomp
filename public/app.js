@@ -20,6 +20,7 @@ let snake = [
 ];
 // Payer score
 let score = 0;
+let highScores = [];
 //Food x-coordinate
 let foodX;
 //Food y-coordinate
@@ -79,7 +80,10 @@ function main() {
 //Resets Score//
 //********** */
 function resetScore() {
-    document.getElementById("playerScore").innerHTML = 0;
+    highScores.push(score);
+    // console.log(highScores);
+    score = 0;
+    document.getElementById("playerScore").innerHTML = score;
 }
 
 //********************* */
@@ -93,6 +97,8 @@ function resetSnake() {
         {x:170, y:200},
         {x:160, y:200}
     ];
+    dx = 10;
+    dy = 0;
 }
 
 //**************** */
@@ -136,8 +142,8 @@ reset.addEventListener("click", resetGame);
 function resetGame() {
     gameOver.style.display = "none";
 
-    resetScore();
     clearCanvas();
+    resetScore();
     resetSnake();
     startGame();
 }    

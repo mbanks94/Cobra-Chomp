@@ -3,7 +3,6 @@ const path = require('path');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 
-
 const app = express();
 const dataPath = path.join(__dirname, "../scores.json");
 
@@ -19,10 +18,20 @@ app.use((req, res, next) => {
 app.post('/scores', (req, res) => {
     let name = req.body.name;
     let score = req.body.score;
-    res.send('Name: ' + name + ' Score: ' + score);
-    let writeData = fs.appendFileSync(dataPath, 
-        JSON.stringify('Name: ' + name + ' Score: ' + score + '; '),
-        'utf-8', err => console.log(err));
+    let item = {"name":name, "score":score};
+    fs.appendFileSync(dataPath, 
+        JSON.stringify(item, null, 4), 'utf-8', err => console.log(err));
+    res.redirect('/');
+});
+
+app.get('/high-scores', (req, res) => {
+    fs.readFile(dataPath, 'utf-8', (err, data) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.send(data);
+        }
+    });
 });
 
 //Joins html, css, js files

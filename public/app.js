@@ -1,7 +1,6 @@
 //*********** */
 // Constants //
 //********* */
-const gameSpeed = 100;
 const canvasBackground = "rgb(118, 87, 81)";
 const snakeColor = "rgb(97, 136, 125)";
 const snakeBorder = "rgb(177, 195, 163)";
@@ -18,6 +17,8 @@ let snake = [
     {x:170, y:200},
     {x:160, y:200}
 ];
+let gameSpeed = 100;
+let changingDirection = false;
 // Payer score
 let score = 0;
 let highScore = 0;
@@ -77,6 +78,7 @@ function main() {
     }
 
     setTimeout(function onTick() {
+        changingDirection = false;
         clearCanvas();
         drawFood();
         moveSnake();
@@ -108,6 +110,7 @@ function resetSnake() {
     ];
     dx = 10;
     dy = 0;
+    gameSpeed = 100;
 }
 
 //**************** */
@@ -180,6 +183,10 @@ function moveSnake() {
         score += 10;
         document.getElementById("playerScore").innerHTML = score;
         findHighScore(score);
+        if (score % 50 == 0 && gameSpeed > 10) {
+            gameSpeed -= 10;
+            console.log(gameSpeed);
+        }
         //Create new food if snake eats food
         createFood();
     } else {
@@ -252,6 +259,9 @@ function changeDirection(event) {
     const rightKey = 39;
     const upKey = 38;
     const downKey = 40;
+
+    if (changingDirection) return;
+    changingDirection = true;
     
     //keyPressed is the value of the pressed key
     const keyPressed = event.keyCode;

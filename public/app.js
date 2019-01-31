@@ -26,6 +26,8 @@ let highScore = 0;
 let foodX;
 //Food y-coordinate
 let foodY;
+let enemyX;
+let enemyY;
 // horizontal velocity
 let dx = 10;
 // vertical velocity
@@ -83,6 +85,7 @@ function main() {
         drawFood();
         moveSnake();
         drawSnake();
+        drawEnemy();
 
         //call main again to create game loop
         main();
@@ -189,6 +192,7 @@ function moveSnake() {
         }
         //Create new food if snake eats food
         createFood();
+        createEnemy();
     } else {
         //Remove the last element of snake  
         snake.pop();
@@ -249,6 +253,25 @@ function drawSnakeBody(bodyPart) {
     //draws border around snake body
     ctx.strokeRect(bodyPart.x, bodyPart.y, 10, 10);
 };
+
+function createEnemy() {
+    enemyX = randomNum(0, gameCanvas.width - 10);
+    enemyY = randomNum(0, gameCanvas.height - 10);
+
+    snake.forEach(function isEnemyOnSnake(bodyPart) {
+        const enemyIsOnSnake = bodyPart.x == enemyX && bodyPart.y == enemyY;
+        if (enemyIsOnSnake) {
+            createEnemy();
+        }
+    });
+}
+
+function drawEnemy() {
+    ctx.fillstyle = 'blue';
+    ctx.strokeStyle = 'darkblue'
+    ctx.fillRect(enemyX, enemyY, 10, 10);
+    ctx.strokeRect(enemyX, enemyY, 10, 10);
+}
 
 //************************************************* */
 // Change snake direction when arrow key is pressed//

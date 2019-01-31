@@ -11,4 +11,4 @@
 -Change Log-
 * fixed bug where snake could reverse on itself if key was pressed before 100ms passed
 * Added game speed increase after every 50 points scored
-* Added basic enemy that spawns in new location each time the player scores
+* Added basic enemy that spawns in new location each time the player scores(Need to add collision detect)

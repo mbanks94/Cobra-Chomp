@@ -268,7 +268,7 @@ function createEnemy() {
 
 function drawEnemy() {
     ctx.fillstyle = 'blue';
-    ctx.strokeStyle = 'darkblue'
+    ctx.strokeStyle = 'darkblue';
     ctx.fillRect(enemyX, enemyY, 10, 10);
     ctx.strokeRect(enemyX, enemyY, 10, 10);
 }

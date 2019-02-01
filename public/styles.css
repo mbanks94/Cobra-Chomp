@@ -16,6 +16,11 @@ body {
     font-family: 'Press Start 2P', cursive;
     font-size: 40px;
 }
+.slidecontainer {
+    position: absolute;
+    margin-left: 70%;
+    margin-top: 15%;
+}
 #score {
     position: absolute;
     color: rgb(97, 136, 125);

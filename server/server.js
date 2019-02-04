@@ -1,21 +1,17 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-// const mysql = require('mysql');
 const bodyParser = require('body-parser');
+// const mysql = require('mysql');
 
 const app = express();
 const dataPath = path.join(__dirname, "../scores.json");
 
-// let con = mysql.createConnection({
-//     host: "localhost",
-//     user: "root",
-//     password: "root"
-// });
-
-// con.connect(function(err) {
-//     if (err) throw err;
-//     console.log('Connected!');
+// let connection = mysql.createConnection({
+//     host : 'localhost',
+//     user : 'Admins-iMac.local',
+//     password : '',
+//     database : 'cobrachomp'
 // });
 
 app.use(bodyParser.urlencoded({extended:false}));

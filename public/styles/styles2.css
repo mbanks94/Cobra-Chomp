@@ -14,8 +14,9 @@ body {
     margin-top: 6%;
 }
 #gameCanvas {
-    width: 70%;
+    width: 50%;
     border: 0.5rem solid rgb(70, 83, 84);
+    z-index: -1;
 }
 .welcome {
     width: 100%;
@@ -38,6 +39,19 @@ body {
 #playerScore,
 #newHighScore {
     padding: 1%;
+}
+.overlay {
+    text-align: center;
+}
+.left,
+.right {
+    width: 40%;
+    float: left;
+}
+#gameStart {
+    background-color: rgba(97, 136, 125, 0.55); 
+    float: left;
+    width: 20%;
 }
 @media screen and (max-width:800px) {
     .highscore, .score, #gameCanvas {

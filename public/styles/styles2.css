@@ -16,6 +16,7 @@ body {
 #gameCanvas {
     width: 50%;
     border: 0.5rem solid rgb(70, 83, 84);
+    background: rgb(118, 87, 81);
     z-index: -1;
 }
 .welcome {
@@ -50,6 +51,11 @@ body {
     color: rgb(243, 238, 186);
 }
 #gameStart {
+    float: left;
+    width: 50%;
+    padding: 2%;
+}
+#gameOver {
     float: left;
     width: 50%;
     padding: 2%;

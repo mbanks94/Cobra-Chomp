@@ -45,13 +45,18 @@ body {
 }
 .left,
 .right {
-    width: 40%;
+    width: 25%;
     float: left;
+    color: rgb(243, 238, 186);
 }
 #gameStart {
-    background-color: rgba(97, 136, 125, 0.55); 
     float: left;
-    width: 20%;
+    width: 50%;
+    padding: 2%;
+}
+#start {
+    padding: 2%;
+    font-family: 'Press Start 2P', cursive;
 }
 @media screen and (max-width:800px) {
     .highscore, .score, #gameCanvas {

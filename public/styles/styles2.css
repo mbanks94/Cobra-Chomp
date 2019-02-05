@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+body {
+    background-color: rgb(243, 238, 186);
+    color: rgb(97, 136, 125);
+    font-family: 'Press Start 2P', cursive;
+}
+.game {
+    text-align: center;
+    margin-top: 10%;
+}
+#gameCanvas {
+    width: 70%;
+    border: 0.5rem solid black;
+}
+.welcome {
+    width: 100%;
+    text-align: center;
+    padding: 3%;
+}
+.highscore {
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding: 3%
+}
+.score {
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding: 3%;
+}
+#playerScore,
+#newHighScore {
+    padding: 2%;
+}
+@media screen and (max-width:800px) {
+    .highscore, .score, #gameCanvas {
+      width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+}

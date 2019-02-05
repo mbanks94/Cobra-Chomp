@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 body {
     background-color: rgb(243, 238, 186);
 }
@@ -9,9 +12,9 @@ body {
     margin-top: 2%;
     z-index: -1;
 }
-.welcome {
+#welcome {
     position: absolute;
-    margin-left: 24%;
+    /* margin-left: 24%; */
     color: rgb(97, 136, 125);
     font-family: 'Press Start 2P', cursive;
     font-size: 40px;
@@ -94,4 +97,7 @@ body {
     font-family: 'Press Start 2P', cursive;
     color: rgb(102, 76, 70);
     padding: 2%;
+}
+::placeholder {
+    opacity: 0.85;
 }

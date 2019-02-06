@@ -17,7 +17,6 @@ body {
     width: 50%;
     border: 0.5rem solid rgb(70, 83, 84);
     background: rgb(118, 87, 81);
-    z-index: -1;
 }
 .welcome {
     width: 100%;

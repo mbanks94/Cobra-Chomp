@@ -1,0 +1,33 @@
+.bgcolor {
+    background: rgb(243, 238, 186);
+}
+.navcolor {
+    background: rgb(70, 83, 84);
+}
+.section {
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+}
+#gameCanvas {
+    width: 100%;
+    border: 0.5rem solid rgb(70, 83, 84);
+    background: rgb(118, 87, 81);
+}
+/* When Viewport is 415px or smaller */
+@media screen and (max-width:415px) {
+    #gameCanvas {
+        min-height: 300px;
+    }
+}
+/* When Viewport is Larger than iPhone 5 */
+@media screen and (min-height:569px) {
+    #gameCanvas {
+        min-height: 400px;
+    }
+}
+/* When Viewport is Larger than iPhone 6/7/8 */
+@media screen and (min-height:668px) {
+    #gameCanvas {
+        min-height: 500px;
+    }
+}

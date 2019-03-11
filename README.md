@@ -1,5 +1,7 @@
 # Cobra Chomp
 
+![Cobra Chomp Image](Cobra-Chomp/CobraChomp.png)
+
 -Project goals-
 1. Create a snake-like game ^
 2. Add walls or enemies to dodge (in progress)

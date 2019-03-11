@@ -1,6 +1,6 @@
 # Cobra Chomp
 
-![Cobra Chomp Image](Cobra-Chomp/CobraChomp.png)
+![Cobra Chomp Image](/CobraChomp.png)
 
 -Project goals-
 1. Create a snake-like game ^
